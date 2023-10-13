@@ -51,7 +51,7 @@ const Header = () => {
       </Link>
       <Flex alignItems={"center"} gap={"15px"}>
         <SwitchThemeButton />
-        {user?.id && <Button onClick={handleLogout}>Log Out</Button>}
+        {user?.id && <Button bg={"orange"} _active={{bg:"#FFA500"}} _hover={{bg:"#FFA500"}} onClick={handleLogout}>Log Out</Button>}
       </Flex>
     </Flex>
   );
