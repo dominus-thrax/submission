@@ -36,7 +36,7 @@ const Dashboard = () => {
             textTransform={"uppercase"}
             color={"purple.400"}
           >
-            Pulzion 23
+            Pulzion Tech or Treat
           </chakra.h3>
           <chakra.h1 py={5} fontSize={48} fontWeight={"bold"} color={textColor}>
             Registered Events
