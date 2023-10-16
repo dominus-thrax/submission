@@ -6,7 +6,7 @@ export const uploadFile = async (file) => {
 
   var upload = new AWS.S3.ManagedUpload({
     params: {
-      Bucket: "pulzion-submission",
+      Bucket: "pasc-alumni-portal",
       Key: `submission/${id}_${file.name}`,
       Body: file,
     },
