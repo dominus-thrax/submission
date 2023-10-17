@@ -1,6 +1,6 @@
 export const Select = {
     defaultProps: {
-      focusBorderColor: "blue.300",
+      focusBorderColor: "orange.300",
     },
   };
   

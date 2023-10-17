@@ -16,8 +16,8 @@ import {
           200: "#292E39",
         },
         light: {
-          100: "#FFFFFF",
-          200: "#F8F9FB",
+          100: "#f8f9fe",
+          200: "#ffffff",
         },
         primaries: {
           100: '#e0e0e6', // Swatch 7
@@ -37,7 +37,7 @@ import {
       styles: {
         global: (props) => ({
           body: {
-            bg: mode("#f8f9fb", "#222")(props),
+            bg: mode("#f3f4f8", "#222")(props),
           },
           "*::placeholder": {
             color: mode("gray.400", "whiteAlpha.400")(props),
@@ -51,6 +51,6 @@ import {
         Select,
       },
     },
-    withDefaultColorScheme({ colorScheme: "blue" })
+    withDefaultColorScheme({ colorScheme: "orange" })
   );
   

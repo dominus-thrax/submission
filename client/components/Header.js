@@ -45,13 +45,13 @@ const Header = () => {
       <Link href="/">
         {colorMode === "light" ? (
           <Image
-            src="/logo-dark.png"
+            src="/homepage_logo_2.png"
             width={300}
-            height={10}
+            height={150}
             alt={"logo"}
           />
         ) : (
-          <Image src="/logo-light.png" width={300} height={10} alt={"logo"} />
+          <Image src="/homepage_logo_2.png" width={300} height={150} alt={"logo"} />
         )}
       </Link>
       <Flex alignItems={"center"} gap={"15px"}>

@@ -177,7 +177,7 @@ const Freeze = () => {
                   }}
                   borderRadius={"md"}
                 >
-                  Downlooad
+                  Download
                 </Link>
               </Flex>
             </GridItem>

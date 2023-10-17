@@ -63,9 +63,10 @@ const Dashboard = () => {
             console.log("line 68 in dashboard", event, masterEvents);
             const eve = masterEvents.find(
               (eve) =>
-                eve.ems_id === event.ems_id &&
-                event.name != "Paper Presentation" &&
-                event.name != "Insight" 
+                eve.ems_id === event.ems_id 
+                // &&
+                // event.name != "Paper Presentation" &&
+                // event.name != "Insight" 
             );
             return (
               <EventCard

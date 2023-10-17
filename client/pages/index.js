@@ -59,12 +59,12 @@ function Loginpage() {
         <Flex
           align={"center"}
           justify={"center"}
-          rounded={useColorModeValue("", "lg")}
-          bg={useColorModeValue("white.100", "secondaries.800")}
+          rounded={useColorModeValue("xl", "xl")}
+          bg={useColorModeValue("light.200", "secondaries.800")}
         >
           <Stack spacing={"8"} py={12} px={4}>
             <Stack align={"center"}>
-              <Heading fontSize={"4xl"}>Sign in to your account </Heading>
+              <Heading fontSize={"4xl"} color={"#f68808"}>Sign in to your account </Heading>
             </Stack>
             <Box
               rounded={"lg"}
@@ -99,10 +99,14 @@ function Loginpage() {
                         placeholder="Password"
                       />
                       <Button
-                        bg={"blue.400"}
-                        color={"white"}
+                        bg={"#f68808"}
+                        color={"#3E4559"}
                         _hover={{
-                          bg: "blue.500",
+                          bg: "#c2410c",
+                          color:"white"
+                        }}
+                        _active={{
+                          bg: "#f68808",
                         }}
                         type="submit"
                         isLoading={loading}
