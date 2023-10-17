@@ -18,12 +18,14 @@ import FormField from "../components/FormField";
 import { userLogin } from "../action/user";
 import AppContext from "../context/AppContext";
 import publicRoute from "../routers/publicRoute";
+
 const validateSchema = Yup.object({
   email: Yup.string().email("Invalid email address").required("Required"),
   password: Yup.string().required("Required")
 });
 
 function Loginpage() {
+
   const { dispatchUser, dispatchEvents } = useContext(AppContext);
   const [loading, setLoading] = useState(false);
 
@@ -59,19 +61,10 @@ function Loginpage() {
           justify={"center"}
           rounded={useColorModeValue("", "lg")}
           bg={useColorModeValue("white.100", "secondaries.800")}
-          // Apply Halloween-style background and border color
-          // bg={"#3E4559"}
-          borderColor={"#FFA500"}
         >
           <Stack spacing={"8"} py={12} px={4}>
             <Stack align={"center"}>
-              <Heading
-                fontSize={"4xl"}
-                // Apply Halloween-style font color
-                color={"#FFA500"}
-              >
-                Sign in to your account
-              </Heading>
+              <Heading fontSize={"4xl"}>Sign in to your account </Heading>
             </Stack>
             <Box
               rounded={"lg"}
@@ -98,7 +91,7 @@ function Loginpage() {
                       />
                       <FormField
                         label="Password"
-                        type="password"
+                        type='password'
                         name="password"
                         value={values.password}
                         onChange={handleChange}
@@ -106,14 +99,10 @@ function Loginpage() {
                         placeholder="Password"
                       />
                       <Button
-                        // Apply Halloween-style button colors
-                        bg={"#FFA500"}
-                        color={"#3E4559"}
+                        bg={"blue.400"}
+                        color={"white"}
                         _hover={{
-                          bg: "#FF4500",
-                        }}
-                        _active={{
-                          bg: "orange",
+                          bg: "blue.500",
                         }}
                         type="submit"
                         isLoading={loading}
@@ -129,6 +118,7 @@ function Loginpage() {
         </Flex>
       </Flex>
     </Layout>
+
   );
 }
 

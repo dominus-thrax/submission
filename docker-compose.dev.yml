@@ -14,7 +14,7 @@ services:
     env_file:
       - .env.dev
     command: >
-      sh -c "npm install -g npm@latest && npm install && npm run dev"
+      sh -c "npm install -g npm@latest && npm install --legacy-peer-deps && npm run dev"
 
 volumes:
   run_vol:

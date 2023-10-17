@@ -14,10 +14,11 @@ import TextEditor from '../components/TextEditor';
 import { ChevronLeftIcon } from '@chakra-ui/icons';
 
 const options = [
-  { value: "1. Great things happen out of one’s comfort zone but what if a person is happy and satisfied in his comfort zone?", label: "1. Great things happen out of one’s comfort zone but what if a person is happy and satisfied in his comfort zone?" },
-  { value: "2. Are good morals innate or a result of fear?", label: "2. Are good morals innate or a result of fear?" },
-  { value: "3. Is honest disagreement a good sign of progress?", label: "3. Is honest disagreement a good sign of progress?" },
-  { value: "4. Which is more important: creativity or efficiency?", label: "4. Which is more important: creativity or efficiency?" },
+  { value: "1. What if India was a monarch?", label: "1. What if India was a monarch?" },
+  { value: "2. According to me, the best invention to date is….", label: "2. According to me, the best invention to date is…" },
+  { value: "3. Is Moonlighting ethical?", label: "3. Is Moonlighting ethical?" },
+  { value: "4. Is there Life Out There?", label: "4. Is there Life Out There?" },
+  { value: "5. Write about an incident from the point of view of your favorite fictional character", label: "5. Write about an incident from the point of view of your favorite fictional character" },
 
 ]
 
@@ -129,10 +130,30 @@ const Insight = () => {
                       Instructions
                     </Text>
                     <Text fontSize='lg'>
-                      Round 1: Passage/poem writing: Four topics would be given, out of which participants have to choose one and write a passage, story, poem, or any other suitable form of creative writing.
+                      Round 1:
+                      Write an essay or a story using the given prompt.
+                      Contestants are required to complete a story or an essay for the prompts provided.
+                      <br></br>
+                      Mode: online
+                      <br></br>
+                      Word limit: 400 words
+                      <br></br>
+                      Timeline: 3 days (30/4/23 to 03/05/23)
+                      <br></br>
+                      File should be sent in word doc format
                     </Text>
                     <Text fontSize='lg'>
-                      Round 2: Third&lsquo;s POV: A short story would be given from a person&lsquo;s point of view and the participants will have to write the same story from a third person&lsquo;s point of view.
+                      Round 2:
+                      Mode: offline
+                      Picture narrative.
+                      <br></br>
+                      Given would be a picture with a deeper meaning contained in it. <br></br>
+                      Contestants are required to write a narrative about the picture, describing what significance it holds.
+                      <br></br>
+                      Prep time: 1 min <br></br>
+                      Writing time: 15 mins <br></br>
+                      Word limit: 150-400 words <br></br>
+
                     </Text>
                     <Text fontSize='lg'>
                       1. All rounds are elimination rounds and selected participants would be informed by our team.

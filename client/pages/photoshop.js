@@ -116,7 +116,7 @@ const Photoshop = () => {
                                             Theme
                                         </Text>
                                         <Text fontSize='2xl'>
-                                            - Time Travel
+                                            - Space Culture
                                         </Text>
                                     </Stack>
                                 </TabPanel>
@@ -197,8 +197,8 @@ const Photoshop = () => {
                                                     spacing={10}
                                                 >
                                                     <FileInput
-                                                        accept={'Image/*'}
-                                                        label='Upload Your Image ( .jpg, .jpeg or .png upto 10mb )'
+                                                        accept={'Image/*,.psd'}
+                                                        label='Upload Your Image ( .jpg, .jpeg or .png .pdf .psd upto 10mb )'
                                                         name='file'
                                                         onBlur={handleBlur}
                                                     />

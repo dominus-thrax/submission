@@ -21,15 +21,15 @@ import Layout from "../components/Layout";
 import privateUserRoute from "../routers/privateUserRoute";
 import { Formik } from "formik";
 import { toast } from "react-toastify";
-import FileInput from "../components/FileInput";
 import NextLink from "next/link";
+import FileInput from "../components/FileInput";
 import { uploadFile } from "../action/uploadFile";
 import ButtonWithModal from "../components/ButtonWithModal";
 import { getEntries, submitEntries } from "../action/entries";
 import ContentLoader from "../components/ContentLoader";
 import { ChevronLeftIcon } from "@chakra-ui/icons";
 
-const Webapp = () => {
+const Freeze = () => {
   const textColor = useColorModeValue("gray.700", "gray.50");
   const [submission, setSubmission] = useState();
   const [loading, setLoading] = useState(true);
@@ -39,7 +39,7 @@ const Webapp = () => {
       return;
     }
     console.log(values.file.size);
-    if (values.file.size > 5000000) {
+    if (values.file.size > 10000000) {
       toast.error("File Size Exceeded");
       return;
     }
@@ -51,7 +51,7 @@ const Webapp = () => {
         setLoading(false);
         return;
       }
-      const entryData = await submitEntries(data, "webapp");
+      const entryData = await submitEntries(data, "freeze");
       if (entryData?.error) {
         toast.error(entryData?.error);
         setLoading(false);
@@ -68,7 +68,7 @@ const Webapp = () => {
   useEffect(() => {
     const fetchSubmission = async () => {
       try {
-        const entryData = await getEntries("webapp");
+        const entryData = await getEntries("freeze");
         if (entryData?.error) {
           console.log(entryData?.error);
         }
@@ -107,72 +107,46 @@ const Webapp = () => {
           </chakra.h3>
         </NextLink>
         <chakra.h1 py={5} fontSize={48} fontWeight={"bold"} color={textColor}>
-          Web N App
+          Freeze the second
         </chakra.h1>
         <SimpleGrid columns={{ base: 1, md: 2 }} gap={10}>
           <GridItem>
             <Tabs onChange={(index) => setTabIndex(index)}>
               <TabList>
-                <Tab>Topics</Tab>
+                <Tab>Theme</Tab>
                 <Tab>Instructions</Tab>
               </TabList>
               <TabPanels>
                 <TabPanel>
                   <Stack spacing={3}>
-                    <Text fontSize="2xl">Topics</Text>
-                    <Text fontSize="xl">Topics for FE/SE category:</Text>
-                    <Text fontSize="lg">
-                      1. Social media post and exploration section
-                    </Text>
-                    <Text fontSize="lg">2. Blog Website</Text>
-                    <Text fontSize="lg">
-                      3. Online marketplace (vehicle or any other category)
-                    </Text>
-                    <Text fontSize="xl">
-                      For (SE/TE/BE - Full Stack) judged on full - stack
-                      application implementation. Topics for SE/TE/BE category:
-                    </Text>
-                    <Text fontSize="lg">
-                      1. A taskmaster that allows users to create and manage
-                      their tasks + expense tracker
-                    </Text>
-                    <Text fontSize="lg">
-                      2. Crypto Tracker (Keep tracks of Cryptocurrency i.e time,
-                      value, data)
-                    </Text>
-                    <Text fontSize="lg">
-                      3. A community service platform for public welfare.
+                    <Text fontSize="2xl">Theme</Text>
+                    <Text fontSize="2xl">
+                      Photographs on any theme will be accepted!
                     </Text>
                   </Stack>
                 </TabPanel>
                 <TabPanel>
                   <Stack spacing={3}>
                     <Text fontSize="2xl">Instructions</Text>
-                    <Text fontSize="lg" fontWeight="bold">
-                      1. All team member's details should be present in PPT.
-                    </Text>
-                    <Text fontSize="lg" fontWeight="bold">
-                      2. PPT should be of size 6-7 slides.
-                    </Text>
-                    <Text fontSize="lg" fontWeight="bold">
-                      3. PPT should contain the github link of the project.
+                    <Text fontSize="lg">
+                      1. The participants will be required to submit their
+                      entries through the submission platform!
                     </Text>
                     <Text fontSize="lg">
-                      4. Topics are out, the idea submission deadline is 1st May
-                      2023 (11:59 pm)
+                      2.Photos must be in JPEG, JPG, or PNG format only.
                     </Text>
                     <Text fontSize="lg">
-                      5. Participants will have to choose only a topic (listed
-                      above in 'Rounds) and make a presentation on their idea as
-                      well as a basic prototype of their project.
+                      3. You are required to provide a unique title &
+                      description for each image submitted.
                     </Text>
-                    <Text fontSize="lg">
-                      6. Ppt slides can include web/app screenshots as well as
-                      idea presentation.
+                    <Text fontSize={"lg"}>
+                      4. Advanced editing used to create illusions, deceptions
+                      and/or manipulations, and the adding and removing of
+                      significant elements within the frame is prohibited.
                     </Text>
-                    <Text fontSize="lg">
-                      7. Participants should rename their entry as
-                      GroupName_teamLeaderName.extension
+                    <Text fontSize={"lg"}>
+                      5. The decision of the organizers and judges will be final
+                      and binding on all participants.
                     </Text>
                   </Stack>
                 </TabPanel>
@@ -214,8 +188,8 @@ const Webapp = () => {
                   <form onSubmit={handleSubmit}>
                     <Stack spacing={10}>
                       <FileInput
-                        accept={".ppt,.pptx"}
-                        label="Upload Your PPT ( .ppt, .pptx upto 5mb )"
+                        accept={'Image/*,.pdf'}
+                        label='Upload Your Image ( .jpg, .jpeg or .png .pdf upto 10mb )'
                         name="file"
                         onBlur={handleBlur}
                       />
@@ -236,4 +210,4 @@ const Webapp = () => {
   );
 };
 
-export default privateUserRoute(Webapp);
+export default privateUserRoute(Freeze);

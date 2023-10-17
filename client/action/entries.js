@@ -67,6 +67,7 @@ export const getLeaderboard = async (type) => {
         };
         try {
             const res = await axios(options);
+            console.log("entries", res.data)
             return res.data;
         } catch (e) {
             console.log(e);

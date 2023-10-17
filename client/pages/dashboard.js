@@ -36,7 +36,7 @@ const Dashboard = () => {
             textTransform={"uppercase"}
             color={"purple.400"}
           >
-            Pulzion Tech or Treat
+            Pulzion 23
           </chakra.h3>
           <chakra.h1 py={5} fontSize={48} fontWeight={"bold"} color={textColor}>
             Registered Events
@@ -58,9 +58,15 @@ const Dashboard = () => {
             lg: "64px",
           }}
         >
+          {console.log("LIne 61", contEvents)}
           {contEvents.map((event) => {
             console.log("line 68 in dashboard", event, masterEvents);
-            const eve = masterEvents.find((eve) => eve.ems_id === event.ems_id);
+            const eve = masterEvents.find(
+              (eve) =>
+                eve.ems_id === event.ems_id &&
+                event.name != "Paper Presentation" &&
+                event.name != "Insight" 
+            );
             return (
               <EventCard
                 id={event.id}

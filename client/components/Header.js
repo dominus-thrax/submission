@@ -44,14 +44,19 @@ const Header = () => {
     >
       <Link href="/">
         {colorMode === "light" ? (
-          <Image src="/homepage_logo_2.png" width={300} height={150} alt={"logo"} />
+          <Image
+            src="/logo-dark.png"
+            width={300}
+            height={10}
+            alt={"logo"}
+          />
         ) : (
-          <Image src="/homepage_logo_2.png" width={300} height={150} alt={"logo"} />
+          <Image src="/logo-light.png" width={300} height={10} alt={"logo"} />
         )}
       </Link>
       <Flex alignItems={"center"} gap={"15px"}>
         <SwitchThemeButton />
-        {user?.id && <Button bg={"orange"} _active={{bg:"#FFA500"}} _hover={{bg:"#FFA500"}} onClick={handleLogout}>Log Out</Button>}
+        {user?.id && <Button onClick={handleLogout}>Log Out</Button>}
       </Flex>
     </Flex>
   );
