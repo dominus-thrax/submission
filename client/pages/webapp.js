@@ -1,4 +1,5 @@
-import {
+import
+{
   Box,
   Button,
   chakra,
@@ -29,51 +30,64 @@ import { getEntries, submitEntries } from "../action/entries";
 import ContentLoader from "../components/ContentLoader";
 import { ChevronLeftIcon } from "@chakra-ui/icons";
 
-const Webapp = () => {
+const Webapp = () =>
+{
   const textColor = useColorModeValue("gray.700", "gray.50");
   const [submission, setSubmission] = useState();
   const [loading, setLoading] = useState(true);
-  const handleSubmit = async (values) => {
-    if (!values?.file?.name) {
+  const handleSubmit = async (values) =>
+  {
+    if (!values?.file?.name)
+    {
       toast.error("Please Select a file");
       return;
     }
     console.log(values.file.size);
-    if (values.file.size > 5000000) {
+    if (values.file.size > 5000000)
+    {
       toast.error("File Size Exceeded");
       return;
     }
-    try {
+    try
+    {
       setLoading(true);
       const data = await uploadFile(values.file);
-      if (data?.error) {
+      if (data?.error)
+      {
         toast.error("Someting Went Wrong");
         setLoading(false);
         return;
       }
       const entryData = await submitEntries(data, "webapp");
-      if (entryData?.error) {
+      if (entryData?.error)
+      {
         toast.error(entryData?.error);
         setLoading(false);
         return;
       }
       setSubmission(entryData.submission);
       toast.success("Entry Submitted Successfully");
-    } catch (e) {
+    } catch (e)
+    {
       console.log(e);
       toast.error("Someting Went Wrong");
     }
     setLoading(false);
   };
-  useEffect(() => {
-    const fetchSubmission = async () => {
-      try {
+  useEffect(() =>
+  {
+    const fetchSubmission = async () =>
+    {
+      try
+      {
         const entryData = await getEntries("webapp");
-        if (entryData?.error) {
+        if (entryData?.error)
+        {
           console.log(entryData?.error);
         }
         setSubmission(entryData?.submission);
-      } catch (e) {
+      } catch (e)
+      {
         console.log(e);
       }
       setLoading(false);
@@ -120,60 +134,76 @@ const Webapp = () => {
                 <TabPanel>
                   <Stack spacing={3}>
                     <Text fontSize="2xl">Topics</Text>
-                    <Text fontSize="xl">Topics for FE/SE category:</Text>
+                    <Text fontSize="xl">Get the list of topics <span style={{color:'#2A65AD'}}><a href="https://drive.google.com/file/d/1IN67H2_RrjTPme0p9mbaDiIMedZySAId/view">here</a></span>.</Text>
+                    <Text fontSize="2xl">Topics for FE/SE category:</Text>
+
+                    <Text fontSize="xl">Themes:</Text>
+                    <Text fontSize="xl">• Agriculture</Text>
                     <Text fontSize="lg">
-                      1. Social media post and exploration section
+                      1. Designing an intuitive web/app marketplace for agricultural products, prioritizing a user-friendly interface to enhance the buying and selling experience for farmers, distributors, and buyers.
                     </Text>
-                    <Text fontSize="lg">2. Blog Website</Text>
-                    <Text fontSize="lg">
-                      3. Online marketplace (vehicle or any other category)
-                    </Text>
+                    <Text fontSize="lg">2. Open innovation track.</Text>
                     <Text fontSize="xl">
+                      • Education
+                    </Text>
+                    <Text fontSize="lg">
+                      1. Optimizing the user interface and user experience (UI/UX) of a web/app-based platform for reselling old books, ensuring a seamless and visually appealing frontend to attract and engage users in the book resale process.
+                    </Text>
+                    <Text fontSize="lg">2. Open innovation track.</Text>
+                    <Text fontSize="xl">
+                      • Healthcare
+                    </Text>
+                    <Text fontSize="lg">
+                      1. Enhancing the frontend design and user interface (UI) of a fitness web/app to deliver an engaging and user-friendly experience, motivating individuals to achieve their fitness goals effectively.
+                    </Text>
+                    <Text fontSize="lg">2. Open innovation track.</Text>
+
+                    <Text fontSize="2xl">
                       For (SE/TE/BE - Full Stack) judged on full - stack
-                      application implementation. Topics for SE/TE/BE category:
+                      application implementation
+                    </Text>
+                    <Text fontSize="xl">Themes:</Text>
+                    <Text fontSize="xl">• Agriculture</Text>
+                    <Text fontSize="lg">
+                      1. Finding an innovative, app-based approach to detect and manage diseases in plants and crops, ensuring sustainable agriculture and food security.
+                    </Text>
+                    <Text fontSize="lg">2. Creating an efficient web/app-based inventory management system tailored for farmers to enhance inventory tracking, minimize waste, and improve agricultural resource utilization.</Text>
+                    <Text fontSize="lg">3. Open innovation track.</Text>
+                    <Text fontSize="xl">
+                      • Education
                     </Text>
                     <Text fontSize="lg">
-                      1. A taskmaster that allows users to create and manage
-                      their tasks + expense tracker
+                      1. Creating a web or app-based solution that promote Education in regional language and also helps to convert existing resources to their regional language.
+                    </Text>
+                    <Text fontSize="lg">2. Designing an incentive-based strategy for the enrollment of educational service providers, including teachers, tutors, mentors, and educational content creators, onto an online platform aimed at offering educational services to learners in India.</Text>
+                    <Text fontSize="lg">3. Open innovation track.</Text>
+                    <Text fontSize="xl">
+                      • Healthcare
                     </Text>
                     <Text fontSize="lg">
-                      2. Crypto Tracker (Keep tracks of Cryptocurrency i.e time,
-                      value, data)
+                      1. Enhancing the allocation of doctor availability and appointments within hospitals by integrating digital technology and AI solutions for improved healthcare access and patient scheduling.
                     </Text>
-                    <Text fontSize="lg">
-                      3. A community service platform for public welfare.
-                    </Text>
+                    <Text fontSize="lg">2. Creating an AR-based medication adherence app that offers visual reminders and instructions for patients, improving medication compliance and health outcomes.</Text>
+                    <Text fontSize="lg">3. Open innovation track.</Text>
                   </Stack>
                 </TabPanel>
                 <TabPanel>
                   <Stack spacing={3}>
                     <Text fontSize="2xl">Instructions</Text>
                     <Text fontSize="lg" fontWeight="bold">
-                      1. All team member's details should be present in PPT.
-                    </Text>
-                    <Text fontSize="lg" fontWeight="bold">
-                      2. PPT should be of size 6-7 slides.
-                    </Text>
-                    <Text fontSize="lg" fontWeight="bold">
-                      3. PPT should contain the github link of the project.
+                      1. Each Team can submit an entry for only on Problem Statement. Participants are expected to submit a PPT of the proposed solution and idea on the submission platform for round-1. Adding the link of the figma prototype or github repository in the PPT is optional but preferred.
                     </Text>
                     <Text fontSize="lg">
-                      4. Topics are out, the idea submission deadline is 1st May
-                      2023 (11:59 pm)
+                      2. Use of web frameworks and any suitable tech stack is allowed but the use of ready-made templates are prohibited.
                     </Text>
                     <Text fontSize="lg">
-                      5. Participants will have to choose only a topic (listed
-                      above in 'Rounds) and make a presentation on their idea as
-                      well as a basic prototype of their project.
+                      3. Participants should rename their PPT name according to their Leader's name as FirstName_LastName_MobileNumber.extension.
                     </Text>
                     <Text fontSize="lg">
-                      6. Ppt slides can include web/app screenshots as well as
+                      4. Ppt slides can include web/app screenshots as well as
                       idea presentation.
                     </Text>
-                    <Text fontSize="lg">
-                      7. Participants should rename their entry as
-                      GroupName_teamLeaderName.extension
-                    </Text>
+                    
                   </Stack>
                 </TabPanel>
               </TabPanels>

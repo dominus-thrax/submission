@@ -14,11 +14,11 @@ import TextEditor from '../components/TextEditor';
 import { ChevronLeftIcon } from '@chakra-ui/icons';
 
 const options = [
-  { value: "1. What if India was a monarch?", label: "1. What if India was a monarch?" },
-  { value: "2. According to me, the best invention to date is….", label: "2. According to me, the best invention to date is…" },
-  { value: "3. Is Moonlighting ethical?", label: "3. Is Moonlighting ethical?" },
-  { value: "4. Is there Life Out There?", label: "4. Is there Life Out There?" },
-  { value: "5. Write about an incident from the point of view of your favorite fictional character", label: "5. Write about an incident from the point of view of your favorite fictional character" },
+  { value: "1. The Time Capsule Letters", label: "1. The Time Capsule Letters:" },
+  { value: "2. The Forgotten Island.", label: "2. The Forgotten Island" },
+  { value: "3. The Enchanted Mirror", label: "3. The Enchanted Mirror" },
+  { value: "4. The Unexpected Reunion", label: "4. The Unexpected Reunion" },
+  { value: "5. A demonic pet", label: "5. A demonic pet" },
 
 ]
 
@@ -115,6 +115,7 @@ const Insight = () => {
                     <Text fontSize='2xl'>
                       Topics
                     </Text>
+                    <Text fontSize="xl"> You can checkout detailed topics <span style={{color:"#2A65AD"}}><a href='https://drive.google.com/file/d/1kxNw18F1G3X2tdBW2v9QB0jI0kLTIqbU/view'>here</a></span>.</Text>
                     {
                       options.map((item) => (
                         <Text fontSize='lg' key={item.value}>
@@ -138,7 +139,7 @@ const Insight = () => {
                       <br></br>
                       Word limit: 400 words
                       <br></br>
-                      Timeline: 3 days (30/4/23 to 03/05/23)
+                      Timeline: 3 days (21/10/23 to 24/10/23)
                       <br></br>
                       File should be sent in word doc format
                     </Text>

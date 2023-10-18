@@ -1,21 +1,22 @@
-import {
-  Box,
-  Button,
-  chakra,
-  Flex,
-  Grid,
-  GridItem,
-  Link,
-  SimpleGrid,
-  Stack,
-  Tab,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Tabs,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import
+  {
+    Box,
+    Button,
+    chakra,
+    Flex,
+    Grid,
+    GridItem,
+    Link,
+    SimpleGrid,
+    Stack,
+    Tab,
+    TabList,
+    TabPanel,
+    TabPanels,
+    Tabs,
+    Text,
+    useColorModeValue,
+  } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import privateUserRoute from "../routers/privateUserRoute";
@@ -29,51 +30,64 @@ import { getEntries, submitEntries } from "../action/entries";
 import ContentLoader from "../components/ContentLoader";
 import { ChevronLeftIcon } from "@chakra-ui/icons";
 
-const Freeze = () => {
+const Freeze = () =>
+{
   const textColor = useColorModeValue("gray.700", "gray.50");
   const [submission, setSubmission] = useState();
   const [loading, setLoading] = useState(true);
-  const handleSubmit = async (values) => {
-    if (!values?.file?.name) {
+  const handleSubmit = async (values) =>
+  {
+    if (!values?.file?.name)
+    {
       toast.error("Please Select a file");
       return;
     }
     console.log(values.file.size);
-    if (values.file.size > 10000000) {
+    if (values.file.size > 10000000)
+    {
       toast.error("File Size Exceeded");
       return;
     }
-    try {
+    try
+    {
       setLoading(true);
       const data = await uploadFile(values.file);
-      if (data?.error) {
+      if (data?.error)
+      {
         toast.error("Someting Went Wrong");
         setLoading(false);
         return;
       }
       const entryData = await submitEntries(data, "freeze");
-      if (entryData?.error) {
+      if (entryData?.error)
+      {
         toast.error(entryData?.error);
         setLoading(false);
         return;
       }
       setSubmission(entryData.submission);
       toast.success("Entry Submitted Successfully");
-    } catch (e) {
+    } catch (e)
+    {
       console.log(e);
       toast.error("Someting Went Wrong");
     }
     setLoading(false);
   };
-  useEffect(() => {
-    const fetchSubmission = async () => {
-      try {
+  useEffect(() =>
+  {
+    const fetchSubmission = async () =>
+    {
+      try
+      {
         const entryData = await getEntries("freeze");
-        if (entryData?.error) {
+        if (entryData?.error)
+        {
           console.log(entryData?.error);
         }
         setSubmission(entryData?.submission);
-      } catch (e) {
+      } catch (e)
+      {
         console.log(e);
       }
       setLoading(false);
@@ -135,18 +149,27 @@ const Freeze = () => {
                     <Text fontSize="lg">
                       2.Photos must be in JPEG, JPG, or PNG format only.
                     </Text>
-                    <Text fontSize="lg">
+                    {/* <Text fontSize="lg">
                       3. You are required to provide a unique title &
                       description for each image submitted.
-                    </Text>
+                    </Text> */}
                     <Text fontSize={"lg"}>
-                      4. Advanced editing used to create illusions, deceptions
+                      3. Advanced editing used to create illusions, deceptions
                       and/or manipulations, and the adding and removing of
                       significant elements within the frame is prohibited.
                     </Text>
                     <Text fontSize={"lg"}>
-                      5. The decision of the organizers and judges will be final
+                      4. The decision of the organizers and judges will be final
                       and binding on all participants.
+                    </Text>
+                    <Text fontSize={"lg"}>
+                      5. Only one photograph per person per entry .
+                    </Text>
+                    <Text fontSize={"lg"}>
+                      6. No same photograph for two different entries.
+                    </Text>
+                    <Text fontSize={"lg"}>
+                      7. Photograph taken from net won't be considered.
                     </Text>
                   </Stack>
                 </TabPanel>
