@@ -45,7 +45,8 @@ function MyApp({ Component, pageProps }) {
     >
       <ChakraProvider theme={customTheme}>
         <Head>
-          <title>Pulzion 23 | Submission</title>
+            <title>Pulzion 23 | Submission</title>
+            <meta name = "icon" href = "/favicon.ico" />
         </Head>
         <ToastContainer />
         <Component {...pageProps} />
