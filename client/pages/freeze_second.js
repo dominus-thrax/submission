@@ -202,6 +202,7 @@ const Freeze = () =>
                 >
                   Download
                 </Link> */}
+                
               </Flex>
             </GridItem>
           ) : (
