@@ -1,12 +1,13 @@
 import { ArrowRightIcon } from "@chakra-ui/icons";
-import { Box, Button, chakra, Flex, Image ,useColorMode} from "@chakra-ui/react";
+import { Box, Button, chakra, Flex, Image, useColorMode } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import React from "react";
 import { toast } from "react-toastify";
 
-const EventCard = ({ event, page }) => {
+const EventCard = ({ event, page }) =>
+{
   const router = useRouter();
-  const {colorMode}  = useColorMode();
+  const { colorMode } = useColorMode();
   return (
     <Flex
       alignItems={"center"}
@@ -23,9 +24,9 @@ const EventCard = ({ event, page }) => {
         bg={"secondaries.900"}
         p={8}
         borderRadius={"50%"}
-        // border={"0.002px solid #ff4500"}
+      // border={"0.002px solid #ff4500"}
 
-        
+
       >
         <Image src={event.logo} alt="logo" />
       </Box>
@@ -38,28 +39,29 @@ const EventCard = ({ event, page }) => {
         p={"10px"}
         bg={"#FFA500"}
         boxShadow={"0 9px #999"}
-        color={colorMode === "light"?"white":"black"}
+        color={colorMode === "light" ? "white" : "black"}
         _hover={{
-          bg:"FFF500",
-          boxShadow:"0 9px #999",
-          color: colorMode === "light"?"black":"white"
+          bg: "FFF500",
+          boxShadow: "0 9px #999",
+          color: colorMode === "light" ? "black" : "white"
         }}
         _active={{
-          bg:"FF4500",
+          bg: "FF4500",
           boxShadow: "0 5px #666",
           transform: "translateY(4px)",
           transition: "transform 1s boxShadow 0.5s"
         }}
         onClick={() =>
-        //  { if(page!=="/dataquest"){
-           router.push(page)
-        //  }
-        //  else{
-        //     router.push("/dashboard")
-        //     toast.error("Submission for this event is not available")
-        //  }
-        // }
-           
+        {
+          //  { if(page!=="/dataquest"){
+          router.push(page);
+          //  }
+          //  else{
+          //     router.push("/dashboard")
+          //     toast.error("Submission for this event is not available")
+          //  }
+        }
+
         }
       >
         Play
