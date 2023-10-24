@@ -51,14 +51,14 @@ const EventCard = ({ event, page }) => {
           transition: "transform 1s boxShadow 0.5s"
         }}
         onClick={() =>
-         { if(page!=="/dataquest"){
+        //  { if(page!=="/dataquest"){
            router.push(page)
-         }
-         else{
-            router.push("/dashboard")
-            toast.error("Submission for this event is not available")
-         }
-        }
+        //  }
+        //  else{
+        //     router.push("/dashboard")
+        //     toast.error("Submission for this event is not available")
+        //  }
+        // }
            
         }
       >

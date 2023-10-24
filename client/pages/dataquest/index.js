@@ -331,4 +331,4 @@ const Dataquest = () => {
   );
 };
 
-export default privateUserRoute(dataquest);
+export default privateUserRoute(Dataquest);
