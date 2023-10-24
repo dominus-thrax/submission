@@ -24,7 +24,7 @@ const Leaderboard = ({ submissions, senior }) => {
             <Th textAlign={"center"}>Email</Th>
             <Th textAlign={"center"}>First Name</Th>
             <Th textAlign={"center"}>Last Name</Th>
-            <Th textAlign={"center"}> Root Mean Square Error</Th>
+            <Th textAlign={"center"}> {senior ? "F1 Score" : "Accuracy"}</Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -49,7 +49,7 @@ const Leaderboard = ({ submissions, senior }) => {
             <Th textAlign={"center"}>Email</Th>
             <Th textAlign={"center"}>First Name</Th>
             <Th textAlign={"center"}>Last Name</Th>
-            <Th textAlign={"center"}>Root Mean Square Error</Th>
+            <Th textAlign={"center"}>{senior ? "F1 Score" : "Accuracy"}</Th>
             {/* <Th textAlign={'center'}>{"Accuracy"}</Th> */}
           </Tr>
         </Tfoot>

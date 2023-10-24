@@ -74,7 +74,7 @@ const Dataquest = () => {
           submission_csv: data.submission,
           submission_python: data_python.submission,
         },
-        "dataquest2"
+        "dataquest"
       );
       if (entryData?.error) {
         toast.error(entryData?.error);
@@ -96,7 +96,7 @@ const Dataquest = () => {
   useEffect(() => {
     const fetchSubmission = async () => {
       try {
-        const entryData = await getEntries("dataquest2");
+        const entryData = await getEntries("dataquest");
         if (entryData?.error) {
           console.log(entryData?.error);
         }
@@ -136,7 +136,7 @@ const Dataquest = () => {
         </NextLink>
         <Box py={5}>
           <chakra.h1 fontSize={48} fontWeight={"bold"} color={textColor}>
-            DataQuest Round 2 {senior ? "( TE-BE )" : "( FE-SE )"}
+            Dataquest Round 1 {senior ? "( TE-BE )" : "( FE-SE )"}
           </chakra.h1>
           <NextLink href="/dataquest/leaderboard">
             <chakra.span
@@ -164,13 +164,30 @@ const Dataquest = () => {
                     <Text fontSize="2xl">Problem Statement</Text>
                     <Text fontSize="lg">
                       click{" "}
-                      <Link
+                      {senior ? (
+                        <Link
+                          href="https://docs.google.com/document/d/1JHqHLTPxSLL2ttNFEr1w9-9Hg8G3VQYzCTfHvfWPOpM/edit?usp=drive_link"
+                          target={"_blank"}
+                          color={"blue.500"}
+                        >
+                          here
+                        </Link>
+                      ) : (
+                          <Link
+                            href="https://docs.google.com/document/d/1OhpLN2DJ0ZPemcCj8wTvl33FgUzRRF_O6qeXjWr6aDk/edit?usp=sharing"
+                            target={"_blank"}
+                            color={"blue.500"}
+                          >
+                            here
+                          </Link>
+                      )}
+                      {/* <Link
                         href="https://docs.google.com/document/d/1_vNpl-JGbOAtk9AMLtiRQlVuskFqUt_EAwlHkmuZtsE/edit?usp=sharing"
                         target={"_blank"}
                         color={"blue.500"}
                       >
                         here
-                      </Link>{" "}
+                      </Link>{" "} */}
                       to view the problem statement and dataset.
                     </Text>
                     <Text fontSize="lg">
@@ -212,15 +229,15 @@ const Dataquest = () => {
                       considered for evaluation.
                     </Text>
                     <Text fontSize="lg">
-                      5. Two rounds are to be conducted with different datasets
-                      for each category.
+                      5. Two rounds are to be conducted for TE-BE category and
+                      single round for FE-SE category.
                     </Text>
                     <Text fontSize="lg">
                       6. Participants will be filtered out from Round 1
                       according to the decided metrics.
                     </Text>
                     <Text fontSize="lg">
-                      7. Winners will be decided based in the decided metrics.
+                      7. Winners will be decided based on the decided metrics.
                       The decision of the team will be final.
                     </Text>
                     <Text fontSize="lg">
@@ -251,7 +268,7 @@ const Dataquest = () => {
                               {dateString(submission.created_at)}
                             </Text>
                             <Text fontSize="lg">
-                              {"Root Mean Square Error : "} {acc.toPrecision(5)}
+                              {senior? "F1 Score:": "Accuracy:"} {acc.toPrecision(5)}
                             </Text>
                           </Flex>
                           <Link href={submission.submission_csv}>
@@ -314,4 +331,4 @@ const Dataquest = () => {
   );
 };
 
-export default privateUserRoute(Dataquest);
+export default privateUserRoute(dataquest);
