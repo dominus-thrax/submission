@@ -19,7 +19,7 @@ const Leader = () => {
   useEffect(() => {
     const fetchSubmissions = async () => {
       try {
-        const data = await getLeaderboard("dataquest2");
+        const data = await getLeaderboard("dataquest");
         if (data?.error) {
           console.log(data.error);
         }
@@ -79,7 +79,7 @@ const Leader = () => {
           >
             Leaderboard (Top 3) {senior ? "( TE-BE )" : "( FE-SE )"}
           </chakra.h1>
-          {/* {submissions?.length > 0 ? (
+          {submissions?.length > 0 ? (
             <Leaderboard submissions={submissions} senior={senior} />
           ) : (
             <chakra.h3
@@ -93,10 +93,10 @@ const Leader = () => {
               alignItems={"center"}
               mb={3}
             >
-              Results will be Declared at 3:30.
+              Will be updated soon.
             </chakra.h3>
-          )} */}
-          <chakra.h3
+          )}
+          {/* <chakra.h3
               fontWeight={"bold"}
               fontSize={32}
               color={textColor}
@@ -108,7 +108,7 @@ const Leader = () => {
               mb={3}
             >
               Results will be Declared Soon.
-            </chakra.h3>
+            </chakra.h3> */}
         </Flex>
       </Box>
     </Layout>
