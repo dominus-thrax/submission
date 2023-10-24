@@ -77,7 +77,7 @@ const Leader = () => {
             color={textColor}
             pb={"40px"}
           >
-            Leaderboard (Top 3) {senior ? "( TE-BE )" : "( FE-SE )"}
+            Leaderboard {senior ? "( TE-BE )" : "( FE-SE )"}
           </chakra.h1>
           {submissions?.length > 0 ? (
             <Leaderboard submissions={submissions} senior={senior} />
