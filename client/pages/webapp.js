@@ -222,7 +222,7 @@ const Webapp = () =>
                 <Text fontSize={"2xl"} textAlign={"center"}>
                   You have already submitted your entry
                 </Text>
-                {/* <Link
+                <Link
                   href={submission.submission}
                   bg={"blue.400"}
                   px={4}
@@ -234,7 +234,7 @@ const Webapp = () =>
                   borderRadius={"md"}
                 >
                   Downlooad
-                </Link> */}
+                </Link>
                 
               </Flex>
             </GridItem>
