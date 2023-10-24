@@ -141,7 +141,6 @@ const Insight = () => {
                       <br></br>
                       Timeline: 3 days (21/10/23 to 24/10/23)
                       <br></br>
-                      File should be sent in word doc format
                     </Text>
                     <Text fontSize='lg'>
                       Round 2:
