@@ -30,7 +30,7 @@ const Leaderboard = ({ submissions, senior }) => {
         <Tbody>
           {submissions?.map((submission, index) => {
             console.log("In leader board ", submission);
-            const acc = submission.min;
+            const acc = submission.max;
             return (
               <Tr key={index}>
                 <Td textAlign={"center"}>{index + 1}</Td>
