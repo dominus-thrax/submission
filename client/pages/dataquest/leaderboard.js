@@ -107,7 +107,7 @@ const Leader = () => {
               alignItems={"center"}
               mb={3}
             >
-              Results will be Declared at 3:30.
+              Results will be Declared Soon.
             </chakra.h3>
         </Flex>
       </Box>
