@@ -301,7 +301,7 @@ const Dataquest = () => {
                       >
                         Submit your Entry
                       </chakra.h3>
-                      <Text fontSize={"lg"}>maximum 3 entries per day</Text>
+                      <Text fontSize={"lg"}>maximum 5 entries per day</Text>
                     </Box>
                     <FileInput
                       accept={".csv"}
