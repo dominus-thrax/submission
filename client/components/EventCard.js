@@ -53,15 +53,15 @@ const EventCard = ({ event, page }) =>
         }}
         onClick={() =>
         {
-          //  { if(page!=="/dataquest"){
-          router.push(page);
-          //  }
-          //  else{
-          //     router.push("/dashboard")
-          //     toast.error("Submission for this event is not available")
-          //  }
+           { if(page==="/webapp" || page ==="/insight"){
+              router.push("/dashboard")
+              toast.error("Submission for this event has closed")
+           }
+           else{
+              router.push(page);
+           }
         }
-
+        }
         }
       >
         Play
