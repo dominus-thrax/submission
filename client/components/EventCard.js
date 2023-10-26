@@ -53,7 +53,7 @@ const EventCard = ({ event, page }) =>
         }}
         onClick={() =>
         {
-           { if(page==="/webapp" || page ==="/insight"){
+           { if(page==="/webapp" || page ==="/insight" || page === "/dataquest"){
               router.push("/dashboard")
               toast.error("Submission for this event has closed")
            }
