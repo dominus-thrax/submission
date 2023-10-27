@@ -74,7 +74,7 @@ const Dataquest = () => {
           submission_csv: data.submission,
           submission_python: data_python.submission,
         },
-        "dataquest"
+        "dataquest2"
       );
       if (entryData?.error) {
         toast.error(entryData?.error);
@@ -96,7 +96,7 @@ const Dataquest = () => {
   useEffect(() => {
     const fetchSubmission = async () => {
       try {
-        const entryData = await getEntries("dataquest");
+        const entryData = await getEntries("dataquest2");
         if (entryData?.error) {
           console.log(entryData?.error);
         }
@@ -135,8 +135,9 @@ const Dataquest = () => {
           </chakra.h3>
         </NextLink>
         <Box py={5}>
+          
           <chakra.h1 fontSize={48} fontWeight={"bold"} color={textColor}>
-            Dataquest Round 1 {senior ? "( TE-BE )" : "( FE-SE )"}
+            Dataquest Round 2 {senior ? "( TE-BE )" : "( FE-SE )"}
           </chakra.h1>
           <NextLink href="/dataquest/leaderboard">
             <chakra.span
@@ -166,7 +167,7 @@ const Dataquest = () => {
                       click{" "}
                       {senior ? (
                         <Link
-                          href="https://docs.google.com/document/d/1JHqHLTPxSLL2ttNFEr1w9-9Hg8G3VQYzCTfHvfWPOpM/edit?usp=drive_link"
+                          href="https://docs.google.com/document/d/1RlKj0YJZDrJrGdxL5EIOOY_flpjT1jCGPgKDlv2zgtA/edit?usp=sharing"
                           target={"_blank"}
                           color={"blue.500"}
                         >
@@ -174,7 +175,7 @@ const Dataquest = () => {
                         </Link>
                       ) : (
                           <Link
-                            href="https://docs.google.com/document/d/1OhpLN2DJ0ZPemcCj8wTvl33FgUzRRF_O6qeXjWr6aDk/edit?usp=sharing"
+                            href="https://docs.google.com/document/d/1RlKj0YJZDrJrGdxL5EIOOY_flpjT1jCGPgKDlv2zgtA/edit?usp=sharing"
                             target={"_blank"}
                             color={"blue.500"}
                           >
@@ -191,7 +192,7 @@ const Dataquest = () => {
                       to view the problem statement and dataset.
                     </Text>
                     <Text fontSize="lg">
-                      - Participants have to predict the repeat purchase from
+                      - Participants have to predict the pumpkin production from
                       the given dataset
                     </Text>
                     <Text fontSize="lg">
@@ -228,21 +229,14 @@ const Dataquest = () => {
                       4. The best score out of the submissions will be
                       considered for evaluation.
                     </Text>
+                   
                     <Text fontSize="lg">
-                      5. Two rounds are to be conducted for TE-BE category and
-                      single round for FE-SE category.
-                    </Text>
-                    <Text fontSize="lg">
-                      6. Participants will be filtered out from Round 1
-                      according to the decided metrics.
-                    </Text>
-                    <Text fontSize="lg">
-                      7. Winners will be decided based on the decided metrics.
+                      5. Winners will be decided based on the decided metrics.
                       The decision of the team will be final.
                     </Text>
                     <Text fontSize="lg">
                       <b>
-                        8. Participants have to submit the submission csv in the
+                        6. Participants have to submit the submission csv in the
                         given format only.
                       </b>
                     </Text>
@@ -268,7 +262,7 @@ const Dataquest = () => {
                               {dateString(submission.created_at)}
                             </Text>
                             <Text fontSize="lg">
-                              {senior? "F1 Score:": "Accuracy:"} {acc.toPrecision(5)}
+                              {senior? "RMSE: ": "Accuracy:"} {acc.toPrecision(5)}
                             </Text>
                           </Flex>
                           <Link href={submission.submission_csv}>

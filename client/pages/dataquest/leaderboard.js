@@ -19,7 +19,7 @@ const Leader = () => {
   useEffect(() => {
     const fetchSubmissions = async () => {
       try {
-        const data = await getLeaderboard("dataquest");
+        const data = await getLeaderboard("dataquest2");
         if (data?.error) {
           console.log(data.error);
         }

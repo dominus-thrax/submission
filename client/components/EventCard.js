@@ -3,9 +3,12 @@ import { Box, Button, chakra, Flex, Image, useColorMode } from "@chakra-ui/react
 import { useRouter } from "next/router";
 import React from "react";
 import { toast } from "react-toastify";
-
+import { useContext } from "react";
+import AppContext from "../context/AppContext";
 const EventCard = ({ event, page }) =>
 {
+  const { user } = useContext(AppContext);
+  const senior = user.year === "TE" || user.year === "BE";
   const router = useRouter();
   const { colorMode } = useColorMode();
   return (
@@ -53,9 +56,12 @@ const EventCard = ({ event, page }) =>
         }}
         onClick={() =>
         {
-           { if(page==="/webapp" || page ==="/insight" || page === "/dataquest"){
+           { if(page==="/webapp" || page ==="/insight" ){
               router.push("/dashboard")
               toast.error("Submission for this event has closed")
+           }
+           else if(!senior && page==="/dataquest"){
+              toast.error("Round 2 only for TE-BE category")
            }
            else{
               router.push(page);
