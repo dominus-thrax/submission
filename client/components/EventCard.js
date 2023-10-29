@@ -56,20 +56,12 @@ const EventCard = ({ event, page }) =>
         }}
         onClick={() =>
         {
-           { if(page==="/webapp" || page ==="/insight" || page === "/freeze_second"){
+           
               router.push("/dashboard")
               toast.error("Submission for this event has closed")
-           }
-           else if(!senior && page==="/dataquest"){
-              router.push("/dashboard")
-              toast.error("Round 2 only for TE-BE category")
-           }
-           else{
-              router.push(page);
-           }
+          
         }
-        }
-        }
+      }
       >
         Play
       </Button>
